@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React App</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <form role="form">
+        <div class="form-group"> 
+          <label for="search">Search Term:</label>
+          <input type="text" class="form-control" id="search-term">
+        </div>
+        <button type="submit" class="btn btn-default" id="run-search"><i class="fa fa-search"></i> Search</button>
+      </form>           
+    </div>
+  </body>
+</html>
+
+<script>
+
+$("#run-search").on("click", function(event) {
+  event.preventDefault();
+
+  searchTerm = $("#search-term").val().trim();
+
+  var request={
+    url:"http://api.guitarparty.com/v2/songs/",
+    data:{
+      query: searchTerm
+    },
+    headers:{
+      "Guitarparty-Api-Key": "c17fbe4fc589d2eb77e6413d03bb9f53d66668b7"
+    }
+  };
+
+  console.log(request);
+
+  $.ajax(request)
+      .done((data) => {
+          console.log(data);
+      });
+});
+
+
+
+</script>
