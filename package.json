@@ -1,18 +1,27 @@
 {
-  "name": "app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
-  },
-  "devDependencies": {
-    "react-scripts": "0.9.5"
-  },
+  "name": "mongoHw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Byron Richardson",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.9.5",
+    "morgan": "^1.8.1",
+    "request": "^2.81.0"
   }
 }

@@ -1,0 +1,69 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">grooveChordinator</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/search" id="search">Search</a></li>
+        <li><a href="/saved" id="saved">Saved</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-2 col-md-offset-5">
+        <div class="text-center"><h1>Get Groovy!</h1></div>
+    </div>
+  </div>
+</div> {{!-- .container-fluid --}}
+
+<div class="container-fluid">
+
+  <div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div id="result">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-xs-8 col-xs-offset-2">
+
+      <div class="container-fluid" id="inner">
+
+        <ul>
+          {{#each articles}}
+            <div class="row text-center">
+                <li>
+                  <p data-id={{this._id}}>{{this.title}}</p>
+                  <a href={{this.link}}>Link</a>
+                  <button data-id={{this._id}} class="saved">Save</button>
+                </li>
+            </div>
+          {{/each}}
+        </ul>
+
+      </div> {{!-- .container --}}
+
+    </div> {{!-- .col-xs-10 col-xs-offset-1 --}}
+
+  </div> {{!-- .row --}}
+
+  <div><br></div> {{!-- making space --}}
+
+</div> {{!-- .container-fluid --}}
