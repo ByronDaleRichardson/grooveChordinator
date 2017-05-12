@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/search" id="search">Search</a></li>
-        <li><a href="/saved" id="saved">Saved</a></li>
+        <li><a href="/saved" id="saved">Songbook</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -21,8 +21,8 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-2 col-md-offset-5">
-        <div class="text-center"><h1>Saved Songs</h1></div>
+    <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+        <div class="text-center"><h1>Songbook</h1></div>
     </div>
   </div>
 </div> {{!-- .container-fluid --}}
@@ -42,7 +42,7 @@
           <form>
             <div class="form-group">
               <label for="inputeNote">Add Note</label>
-              <input type="text" class="form-control" id="inputNote" placeholder="Comments...">
+              <input type="text" class="form-control" id="inputNote" placeholder="Notes...">
             </div>
             <button type="submit" class="btn btn-default" id="submitNote">Add</button>
           </form>
@@ -59,7 +59,7 @@
       <div class="container-fluid" id="inner">
 
         <ul>
-          {{#each articles}}
+          {{#each songs}}
             <div class="row text-center">
                 <li>
                   <p data-id={{this._id}}>{{this.title}}</p>

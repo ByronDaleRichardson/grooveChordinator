@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/search" id="search">Search</a></li>
-        <li><a href="/saved" id="saved">Saved</a></li>
+        <li><a href="/saved" id="saved">Songbook</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -21,25 +21,28 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-2 col-md-offset-5">
+    <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
         <div class="text-center"><h1>Search Results</h1></div>
     </div>
   </div>
 </div> {{!-- .container-fluid --}}
 
 <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      <div id="search">
+        <form role="form">
+          <div class="form-group">
+            <label for="search">Search For: </label>
+            <input type="text" class="form-control" id="search-term">
+          </div>
+          <button type="submit" class="btn btn-default" id="run-search"> Search</button>
+        </form>
+        <div><br></div>
+        <div id="result"></div>    
 
-  <div id="search">
-    <form role="form">
-      <div class="form-group">
-        <label for="search">Search For: </label>
-        <input type="text" class="form-control" id="search-term">
-      </div>
-      <button type="submit" class="btn btn-default" id="run-search"> Search</button>
-    </form>
-    <div><br></div>
-    <div id="result"></div>    
-
-  <div><br></div> {{!-- making space --}}
+      <div><br></div> {{!-- making space --}}
+    </div>
+  </div>    
 
 </div> {{!-- .container-fluid --}}

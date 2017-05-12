@@ -54,9 +54,30 @@ app.get("/", function(req, res){
   });
 });
 
-app.get("/search", function(req, res){
+app.get("/search",function(req, res){
   res.render("search");
 });
+
+app.get("/api/search/:searchTerm", function(req, res){
+  var searchTerm = req.params.searchTerm;
+  var options={
+    url:"http://api.guitarparty.com/v2/songs/",
+    qs:{
+      query: searchTerm
+    },
+    headers:{
+      "Guitarparty-Api-Key": "c17fbe4fc589d2eb77e6413d03bb9f53d66668b7",
+      "User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
+    }
+  };
+  request.get(options, function(error, response, body){
+    console.log(error, response.statusCode, body);
+    res.json(body);
+  });
+});
+
+
+//res.render("search");
 
 app.get("/display", function(req, res){
   res.render("display");
@@ -154,4 +175,4 @@ app.post("/delete/:id", function(req, res){
 //Listen on PORT
 app.listen(PORT, function(){
   console.log("App running on port " + PORT );
-})
+});

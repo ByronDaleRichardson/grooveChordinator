@@ -3,12 +3,17 @@ $(document).ready(function(){
 
     var _id;
 
-    $("#run-search").on('click', function(){
+    $("#run-search").on('click', function(event){
+      event.preventDefault();
 
-      $.get("/search", function(){
+      searchTerm = $("#search-term").val().trim();
+
+      $.get("/api/search/" + searchTerm, function(){
+        console.log('request');
       })
-      .done(function(){
-        window.location = "/search";
+      .done(function(data){
+        var obs = JSON.parse(data);
+        console.log(obs.objects[0].authors[0].name);
       })
       .fail(function(err){
         alert(JSON.stringify(err));
