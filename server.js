@@ -71,8 +71,10 @@ app.get("/api/search/:searchTerm", function(req, res){
     }
   };
   request.get(options, function(error, response, body){
+    var fromAPI = JSON.parse(body);
     console.log(error, response.statusCode, body);
-    res.json(body);
+    res.setHeader('Content-Type', 'application/json');
+    res.json(fromAPI);
   });
 });
 

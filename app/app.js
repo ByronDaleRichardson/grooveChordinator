@@ -12,8 +12,12 @@ $(document).ready(function(){
         console.log('request');
       })
       .done(function(data){
-        var obs = JSON.parse(data);
-        console.log(obs.objects[0].authors[0].name);
+        //var dataobj = JSON.parse(data);
+        console.log(data);
+        $("#results").text(data.objects[0].authors[0].name);
+        //console.log(_id.objects[0].authors[0].name);
+        //$("#result").text(_id.objects[0].title);
+        //console.log(_id.objects[0].title);
       })
       .fail(function(err){
         alert(JSON.stringify(err));

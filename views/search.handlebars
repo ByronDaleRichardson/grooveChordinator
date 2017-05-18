@@ -39,10 +39,35 @@
           <button type="submit" class="btn btn-default" id="run-search"> Search</button>
         </form>
         <div><br></div>
-        <div id="result"></div>    
+        
 
       <div><br></div> {{!-- making space --}}
     </div>
-  </div>    
+  </div>
+  <div class="row">
+
+    <div class="col-xs-8 col-xs-offset-2">
+
+      <div class="container-fluid" id="inner">
+
+      <div id="results"> </div>
+
+        <ul>
+          {{#each objects}}
+            <div class="row text-center">
+                <li>
+                  <p data-id={{this._id}}>{{this.title}}</p>
+                  <a href={{this.link}}>Link</a>
+                  <button data-id={{this._id}} class="saved">Save</button>
+                </li>
+            </div>
+          {{/each}}
+        </ul>
+
+      </div> {{!-- .container --}}
+
+    </div> {{!-- .col-xs-10 col-xs-offset-1 --}}
+
+  </div> {{!-- .row --}}    
 
 </div> {{!-- .container-fluid --}}
