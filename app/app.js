@@ -14,10 +14,16 @@ $(document).ready(function(){
       .done(function(data){
         //var dataobj = JSON.parse(data);
         console.log(data);
-        $("#results").text(data.objects[0].authors[0].name);
-        //console.log(_id.objects[0].authors[0].name);
-        //$("#result").text(_id.objects[0].title);
-        //console.log(_id.objects[0].title);
+        for(var i = 0; i < data.objects.length; i++){
+          var newDiv = $("<li>").text(data.objects[i].title);
+          var newButton = $("<button>").text(data.objects[i].title + " " + data.objects[i].authors[0].name);
+
+          $("#results").append(newDiv);
+          $("#results").append(newButton);
+
+        }  
+        //$("#results").text(data.objects[0].authors[0].name);
+
       })
       .fail(function(err){
         alert(JSON.stringify(err));

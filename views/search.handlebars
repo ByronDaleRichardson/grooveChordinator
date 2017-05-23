@@ -56,9 +56,9 @@
           {{#each objects}}
             <div class="row text-center">
                 <li>
-                  <p data-id={{this._id}}>{{this.title}}</p>
-                  <a href={{this.link}}>Link</a>
-                  <button data-id={{this._id}} class="saved">Save</button>
+                  <p data-id={{this.id}}>{{this.title}}</p>
+                  <a href={{this.permalink}}>Link</a>
+                  <button data-id={{this.id}} class="saved">Save</button>
                 </li>
             </div>
           {{/each}}
